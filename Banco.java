@@ -1,3 +1,5 @@
+import java.util.Queue;
+
 public class Banco {
     private ColaClientes cola;
 
@@ -18,6 +20,28 @@ public class Banco {
             c.setAtendido(true);
         }
         return c;
+    }
+
+    public int contarCliente(Queue<Cliente> c) {
+        int cont = 0;
+        for (Cliente o : c) {
+            if (o.isAtendido()) {
+                cont++;
+            }
+
+        }
+        return cont;
+    }
+
+    public void MostrarNOmbreCliente(Queue<Cliente> c) {
+
+        for (Cliente o : c) {
+            if (o.isAtendido()) {
+                System.out.println(o.getNombre());
+            }
+
+        }
+
     }
 
     public Cliente verSiguiente() {

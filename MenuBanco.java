@@ -21,6 +21,7 @@ public class MenuBanco {
             System.out.println("2. Atender cliente");
             System.out.println("3. Ver siguiente cliente");
             System.out.println("4. Mostrar cola");
+            System.out.println("5. Atendidos y nombres");
             System.out.println("0. Salir");
             System.out.print("Opción: ");
             opcion = sc.nextInt();
@@ -77,6 +78,17 @@ public class MenuBanco {
                 banco.mostrarCola();
                 break;
 
+            case 5:
+                int i = 0;
+                Cliente atentidos = banco.atenderCliente();
+                if (atentidos != null) {
+                    i = 0;
+                } else {
+                    i++;
+                }
+                System.out.println("Cantidad de clientes atendidos: " + i);
+                break;
+
             case 0:
                 System.out.println("Saliendo...");
                 break;
@@ -85,6 +97,7 @@ public class MenuBanco {
                 System.out.println("Opción inválida");
         }
     }
+
     private String seleccionarServicio() {
 
         int opcion;
